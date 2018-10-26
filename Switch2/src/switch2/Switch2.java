@@ -22,26 +22,38 @@ public class Switch2 {
         Scanner db = new Scanner(System.in);
           out.println("You find a bottle on the ground what do you do with it,"
                   + " drink it, leave it there, or yeet it?");
-            String decision = db.nextLine();
-            String response;
-            
-            
-            switch(decision){
-                case "drink it": 
-                    response = "Congrats you died of poison";
-                    break;
-                case "leave it there": 
-                    response = "Really? Why is your life so boring?";
-                    break;
-                case "yeet it":
-                    response = "You yeet the bottle leading to you getting a "
-                            + "overload of confidence for the rest of your life";
-                    break;
-                default: 
-                    response = "Thats a invalid input, type drink it, leave it "
-                            + "there, or yeet it.";
-                    break;
-            }
+            String decision;
+            String response = null; 
+            boolean loop = true; 
+                      
+            while (loop) {           
+                out.println("Type your answer carefully.");
+                decision = db.nextLine().toLowerCase();
+                
+                switch (decision) {
+                    case "drink it":                    
+                        response = "Congrats you died of poison";
+                        loop = false;
+                        break;
+                        
+                    case "leave it there":                    
+                        response = "Really? Why is your life so boring?";
+                        loop = false; 
+                        break;
+                        
+                    case "yeet it":
+                        response = "You yeet the bottle leading to you getting a "
+                                + "overload of confidence for the rest of your life";
+                        loop = false; 
+                        break;
+                        
+                    default:                    
+                        response = "Thats a invalid input, type drink it, leave it "
+                                + "there, or yeet it.";
+                        break;
+                }
+          }
+        
                  
         out.println(response);
             }
